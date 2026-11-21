@@ -65,3 +65,7 @@ Code: tabela e ondas (C5, 3 de 3), execução com tarefa impossível (C6), pedid
 e convivência com o Stilo nas fases `SPEC`, `PLAN` e trilha curta. No Codex: tabela e
 aprovação (C5, 1 rodada). Pendentes: nova rodada do C8b, C8e, C6 no Codex depois do ok e a
 segunda rodada do C5 no Codex. Detalhes em `.stilo/review-03.md`.
+
+## Licença
+
+MIT. Ver `LICENSE`.
