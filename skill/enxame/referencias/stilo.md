@@ -6,14 +6,15 @@ Este arquivo só vale com `.stilo/state.json` existente. O enxame nunca cria `.s
 pedido para executar com o enxame não é pedido de projeto novo do Stilo. O Stilo decide o quê e quando; você só decide como paralelizar gastando pouco. Se o Stilo
 listar o `enxame` entre os companions, siga o que ele indicar; sem isso, vale o que está aqui.
 
-**Enquanto o enxame roda** (da leitura do plano ao relato final), **nunca:** gravar
+**Enquanto o enxame roda** (da leitura do plano à última onda conferida), **nunca:** gravar
 `.stilo/state.json`, mudar de fase, fazer commit ou push, escrever em `.stilo/` fora de
 `.stilo/logs/`, montar plano próprio fora do `plan.md` do Stilo, ou dar um segundo revisor a
 tarefa de risco alto: ela tem um revisor só.
 
-**Depois do relato final**, o enxame acabou e vale a regra do Stilo para a fase seguinte:
-grave-a você mesmo, sem perguntar ao usuário, se a fase terminou pelo critério do Stilo (no
-`EXECUTE`, todas as tarefas `concluído` e conferidas). Com tarefa `parcial` ou `bloqueado`,
+**Depois da última onda conferida e do registro fechado**, o enxame acabou e vale a
+regra do Stilo: grave você mesmo a fase seguinte em `.stilo/state.json`, sem perguntar ao
+usuário, se a fase terminou pelo critério do Stilo (no `EXECUTE`, todas as tarefas
+`concluído` e conferidas). Com tarefa `parcial` ou `bloqueado`,
 não avance a fase: relate.
 
 ## 1. Fase
@@ -32,7 +33,7 @@ Leia `phase` e `cycle` em `.stilo/state.json` (ou no bloco de estado do Stilo).
 ## 2. Plano
 
 Fase `PLAN`, no `docs/ciclos/<cycle>/plan.md`. Não mude `ID:`, `Especialista:`, `Files:`,
-`Depends-on:` nem `Resources:`, exceto o item 3:
+`Depends-on:` nem `Resources:`, exceto o que os itens 1 a 3 exigem:
 
 1. Definição de interface vira tarefa própria; quem só precisa dela depende só dela.
 2. Junte cadeias de tarefas pequenas.

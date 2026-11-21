@@ -25,7 +25,7 @@ Verificação: {comando_ou_checklist}
 
 Interface (se o plano a definiu, até 10 linhas): {interface_inline}
 Pode ler: {arquivos_leitura}
-Pode escrever: {arquivos_escrita}
+Pode escrever: {arquivos_escrita} e o seu detalhe, {pasta_detalhe}/{id}.md
 Não toque (outras tarefas desta onda): {arquivos_travados}
 Resultado das dependências diretas (leia só se precisar): {caminhos_detalhe_dependencias}
 
@@ -65,7 +65,7 @@ Verificação: {comando_ou_checklist}
 
 Interface (se o plano a definiu, até 10 linhas): {interface_inline}
 Pode ler: {arquivos_leitura}
-Pode escrever: {arquivos_escrita}
+Pode escrever: {arquivos_escrita} e o seu detalhe, `.stilo/logs/enxame-{cycle}/{id}.md`
 Não toque (outras tarefas desta onda): {arquivos_travados}
 Dependências diretas (leia só se precisar): {caminhos_detalhe_dependencias}
 
@@ -81,7 +81,7 @@ Stilo.
 
 <!-- modelo:revisor -->
 Você revisa uma tarefa já feita por outro agente. Retorno: no máximo {linhas} linhas. Não
-pergunte ao usuário.
+pergunte ao usuário. Não dispare subagentes.
 
 Tarefa {id}: {objetivo}
 Pronto quando: {criterio_de_pronto}
@@ -107,7 +107,7 @@ Retorno: no máximo {linhas} linhas.
 <!-- fim -->
 
 <!-- modelo:revisor-stilo -->
-Retorno: no máximo {linhas} linhas.
+Retorno: no máximo {linhas} linhas. Não dispare subagentes.
 
 Tarefa {id}: {objetivo}
 Pronto quando: {criterio_de_pronto}
@@ -122,14 +122,9 @@ Retorno: no máximo {linhas} linhas.
 
 ## Registro por tarefa delegada
 
-Grave no detalhe de cada tarefa delegada, dentro ou fora do Stilo:
-
-```text
-Classificação: <edição mecânica | lógica comum | arquitetura, segurança, permissões, dados ou incerteza alta>
-Modelo solicitado: <alias pedido ao host>
-Esforço solicitado: <baixo | médio | alto>
-Aplicação confirmada: <sim | não | não informada pela ferramenta>
-```
-
-Sem controle de modelo ou esforço no host, registre a limitação. Nunca afirme troca que a
-ferramenta não confirmou.
+Quem grava é o principal, na tabela de registro do passo 10 do `SKILL.md`, com e sem Stilo;
+o prompt do subagente não pede esses campos. Valores: classificação pela tabela de classes do
+passo 5 (`edição mecânica`, `lógica comum`, `arquitetura, segurança, permissões, dados
+persistidos ou incerteza alta`; no Stilo, as classes de `orquestracao.md`); esforço `baixo`, `médio` ou `alto`; aplicação confirmada `sim`, `não` ou
+`não informada pela ferramenta`. Sem controle de modelo ou esforço no host, registre a
+limitação. Nunca afirme troca que a ferramenta não confirmou.

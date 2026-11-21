@@ -27,7 +27,9 @@ usuário. Siga os passos na ordem.
    Leia só a referência do seu host.
 3. **Leitura negada.** Se a leitura de uma referência for negada, diga ao usuário que libere
    a pasta da skill (ex.: "permita leitura de ~/.claude/skills/enxame"). Em projeto Stilo,
-   não siga sem `referencias/stilo.md`; fora dele, siga com o passo 7 deste arquivo e avise.
+   não siga sem `referencias/stilo.md`. `prompts.md` negado: use o prompt mínimo do passo 7.
+   Referência de host negada: use "modelo padrão do host" (passo 5) e lotes de até 4. Nos
+   dois casos a tabela do passo 6 e o ok continuam obrigatórios; avise.
 
 ## 1. Entrada
 
@@ -260,6 +262,9 @@ Depois de cada onda (ou lote), antes da seguinte:
 3. **Escalada.** barato → médio → forte; o esforço vai para o padrão do novo nível.
 4. Já estava no forte, ou falhou de novo depois de escalar: pare essa linha de trabalho
    (a tarefa e as que dependem dela) e reporte ao usuário. As outras linhas seguem.
+5. **Grave a conferência antes de seguir:** no progresso (passo 10), atualize a tabela de
+   registro e acrescente a seção da onda com o status de cada tarefa. Sem isso gravado, não
+   dispare a onda seguinte nem escreva o relato final.
 
 ## 9. Revisor (só risco alto)
 
@@ -274,13 +279,15 @@ segue o passo 8. Em projeto Stilo, é um revisor só, não um do Stilo e outro d
 
 **Pasta de trabalho.** Fora do Stilo: `.enxame/<AAAA-MM-DD-HHMM>/` na raiz do projeto, com
 `progresso.md` e um `<id>.md` por tarefa com detalhe. Em repo git, garanta a linha
-`.enxame/` em `.git/info/exclude` (local, não versionado); nunca mexa no `.gitignore`. Em
+`.enxame/` em `.git/info/exclude` (local, não versionado); nunca mexa no `.gitignore`. Se o
+exclude não for gravável (sandbox), crie a pasta na raiz assim mesmo e avise que ela aparece
+no `git status`; nunca a crie fora do projeto, porque a retomada procura ali. Em
 projeto Stilo: `.stilo/logs/enxame-<cycle>.md` e `.stilo/logs/enxame-<cycle>/<id>.md`.
 Tarefas dependentes recebem o caminho do detalhe, não o conteúdo.
 
 **Tabela de registro (obrigatória, com e sem Stilo).** Uma linha por tarefa delegada, gravada
-no disparo e atualizada na conferência. "Aplicação confirmada" é `sim` só se o host confirmou
-o modelo; senão, "não informada pela ferramenta". 
+no disparo e atualizada na conferência. "Aplicação confirmada" é `sim` se o host confirmou o
+modelo, `não` se o host forçou outro e, sem informação, "não informada pela ferramenta".
 ```text
 | id | classificação | modelo solicitado | esforço solicitado | aplicação confirmada | status |
 |---|---|---|---|---|---|
@@ -314,6 +321,8 @@ valendo. Sem revisor separado, o principal revisa cada tarefa de risco alto com 
 checklist do modelo `revisor` de `referencias/prompts.md` e diz isso no relato.
 
 ## 12. Relato final
+
+Use exatamente estes rótulos, nesta ordem, com `—` quando vazio:
 
 ```text
 Concluídas: T1, T2, T3, T5, T6

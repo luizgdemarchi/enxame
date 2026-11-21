@@ -14,7 +14,7 @@ Formato: `- [ ] <item> — passa/falha — evidência:`
 ## C6 — plano de 7 tarefas, com aprovação (7ª com critério de pronto impossível). O transcript mostra:
 
 - [ ] spawns de cada onda numa só mensagem — passa/falha — evidência:
-- [ ] cada spawn com modelo e esforço explícitos (ou "modelo padrão do host", se R7 caiu no fallback) — passa/falha — evidência:
+- [ ] cada spawn com modelo e esforço explícitos (ou "modelo padrão do host", se a descoberta de modelos caiu no fallback (passo 5 do `SKILL.md`)) — passa/falha — evidência:
 - [ ] prompts de subagente sem histórico da conversa — passa/falha — evidência:
 - [ ] prompts de subagente com instrução de agrupar chamadas — passa/falha — evidência:
 - [ ] retornos dentro do limite de linhas, com caminho de arquivo quando há detalhe — passa/falha — evidência:
@@ -30,7 +30,7 @@ Formato: `- [ ] <item> — passa/falha — evidência:`
 
 ## C8 — convivência com o Stilo Code (cópia descartável com `.stilo/state.json` e o Stilo instalado; 1 rodada cada)
 
-Entre antes e depois de cada cenário (`estado_antes`/`estado_depois` no `.meta`), `.stilo/state.json` só pode diferir em `phase` e `updated`, e só pela transição seguinte do Stilo (`PLAN`→`EXECUTE` ou `EXECUTE`→`REVIEW`) gravada depois do relato final do enxame; `git log --oneline | wc -l` não muda.
+Entre antes e depois de cada cenário (`estado_antes`/`estado_depois` no `.meta`), `.stilo/state.json` só pode diferir em `phase` e `updated`, e só pela transição seguinte do Stilo (`PLAN`→`EXECUTE` ou `EXECUTE`→`REVIEW`) gravada depois da última onda conferida e do registro fechado; `git log --oneline | wc -l` não muda.
 
 - [ ] a. fase `SPEC` com pedido para executar: o `enxame` não dispara subagente nem cria plano próprio, e aponta o pipeline — passa/falha — evidência:
 - [ ] b. fase `EXECUTE`, trilha completa, `plan.md` com `Files:`, `Depends-on:` e `Resources:`: as ondas disparadas são as que `validate-plan.js` imprime para esse plano, cada tarefa delegada tem o registro de modelo do Stilo, e o prompt do subagente não repete as regras do hook — passa/falha — evidência:

@@ -60,11 +60,10 @@ commit e registra o modelo de cada tarefa em `.stilo/logs/`. Regras em
 
 ## Estado
 
-Em avaliação (review 03 do ciclo `2026-11-19-skill-multiagente`). Comprovados no Claude
-Code: tabela e ondas (C5, 3 de 3), execução com tarefa impossível (C6), pedido sem plano (C7)
-e convivência com o Stilo nas fases `SPEC`, `PLAN` e trilha curta. No Codex: tabela e
-aprovação (C5, 1 rodada). Pendentes: nova rodada do C8b, C8e, C6 no Codex depois do ok e a
-segunda rodada do C5 no Codex. Detalhes em `.stilo/review-03.md`.
+Ciclo `2026-11-19-skill-multiagente` revisado (reviews 01–05 e revisão editorial em `.stilo/`).
+Critérios C1–C8 atendidos no Claude Code; no Codex, C5 (3 rodadas) e C6 nos itens
+verificáveis, porque o Codex grava o texto dos prompts de subagente criptografado.
+Pendências médias e baixas em `.stilo/review-05.md`.
 
 ## Licença
 

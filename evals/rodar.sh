@@ -109,9 +109,9 @@ if [ "$HOST" = claude ]; then
   fi
 else
   if [ -n "$RESUME" ]; then
-    codex exec resume --json --skip-git-repo-check -c 'sandbox_mode="workspace-write"' "$SID" "$TEXTO" >> "$JSONL"
+    codex exec resume --json --skip-git-repo-check -c 'sandbox_mode="workspace-write"' "$SID" "$TEXTO" >> "$JSONL" < /dev/null
   else
-    codex exec --json --skip-git-repo-check --sandbox workspace-write "$TEXTO" >> "$JSONL"
+    codex exec --json --skip-git-repo-check --sandbox workspace-write "$TEXTO" >> "$JSONL" < /dev/null
   fi
   RC=$?
   if [ -z "$RESUME" ]; then

@@ -2,5 +2,6 @@ hash_antes=sem-stilo
 commits_antes=1
 session_id=01a1fb9b-c837-7af0-96f7-35ac89ced66e
 hash_depois=sem-stilo
+estado_depois=sem-stilo
 commits_depois=1
-exit_host=0
+exit_host=1

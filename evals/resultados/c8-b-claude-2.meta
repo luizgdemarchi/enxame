@@ -1,0 +1,8 @@
+hash_antes=bab4e1311d862ebdb78ad4073441b6848fc0960c5721a9c6c99abcc3da9621c6
+estado_antes={ "version": 1, "project": "notas", "phase": "EXECUTE", "cycle": "2026-11-20-exportar", "reviewRound": 0, "editorialReviewRound": 0, "updated": "2026-11-20T12:00:00Z" }
+commits_antes=1
+session_id=35d2f7dc-43a2-41cf-91ae-2a140ac628ba
+hash_depois=1ae8395c0e2cf4704beba7cac7f20c6615dc55d1999aa5c44630fafe665e609d
+estado_depois={ "version": 1, "project": "notas", "phase": "REVIEW", "cycle": "2026-11-20-exportar", "reviewRound": 0, "editorialReviewRound": 0, "updated": "2026-11-21T12:00:00Z" }
+commits_depois=1
+exit_host=0

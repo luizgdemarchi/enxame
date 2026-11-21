@@ -137,10 +137,10 @@ que bloqueia volta ao executor uma vez, e depois segue R12.
 R17. **Convivência com o Stilo Code.** Projeto Stilo Code é o que tem `.stilo/state.json`
 achado subindo a partir do diretório atual. Nele, o Stilo decide o quê e quando; o
 `enxame` só decide como paralelizar com pouco gasto. Regras:
-  a. Enquanto roda (da leitura do plano ao relato final), o `enxame` nunca grava
+  a. Enquanto roda (da leitura do plano à última onda conferida), o `enxame` nunca grava
      `.stilo/state.json`, nunca muda de fase, nunca faz commit nem push, e não escreve em
-     `.stilo/` fora de `.stilo/logs/`. Depois do relato final, a fase seguinte segue a regra
-     do Stilo: o coordenador a grava sem perguntar ao usuário, se a fase terminou pelo
+     `.stilo/` fora de `.stilo/logs/`. Depois dela e do registro fechado, a fase
+     seguinte segue a regra do Stilo: o coordenador a grava sem perguntar ao usuário, se a fase terminou pelo
      critério do Stilo (decisão do usuário, review 03).
   b. Só dispara subagentes na fase `EXECUTE` (implementadores) e nas revisões que o próprio
      Stilo manda fazer em subagente. Em `BRAINSTORM` e `SPEC` não faz nada. Não monta plano
@@ -230,7 +230,7 @@ avaliador.
 C8. Convivência com o Stilo Code, em cópia descartável com `.stilo/state.json` e o Stilo
 instalado. Entre antes e depois de cada cenário, `.stilo/state.json` só pode diferir em
 `phase` e `updated`, e só pela transição seguinte do Stilo (`PLAN`→`EXECUTE` ou
-`EXECUTE`→`REVIEW`) gravada depois do relato final do `enxame`; `git log --oneline | wc -l`
+`EXECUTE`→`REVIEW`) gravada depois da última onda conferida; `git log --oneline | wc -l`
 não muda. Cenários, 1 rodada cada, mesmo avaliador:
   a. fase `SPEC` com pedido para executar: o `enxame` não dispara subagente nem cria plano
      próprio, e aponta o pipeline;

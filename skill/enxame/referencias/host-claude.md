@@ -25,7 +25,7 @@ Fonte: https://code.claude.com/docs/en/sub-agents (conferida em 2026-11-19).
 
 ## Aplicação forçada
 - Se `CLAUDE_CODE_SUBAGENT_MODEL_FORCE=1` estiver ligado (v2.1.257+), o modelo pedido é ignorado e o agente não consegue passar `model`. Todos os subagentes usam o modelo forçado.
-- Nesse caso registre no relatório: "aplicação confirmada: não".
+- Nesse caso registre na tabela de registro: "aplicação confirmada: não".
 - Sem a variável, registre o alias pedido e "aplicação confirmada: sim" apenas se o retorno ou o log mostrar o modelo usado.
 
 ## Checklist da onda
