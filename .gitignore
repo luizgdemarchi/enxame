@@ -1,0 +1,5 @@
+# Transcrições das avaliações (caminhos locais); resumos e .meta são versionados
+evals/resultados/**/*.jsonl
+# Logs do Stilo e pasta de trabalho do enxame
+.stilo/logs/
+.enxame/
